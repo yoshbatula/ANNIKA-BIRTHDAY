@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppons', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.gif-cutie img {
+    justify-content: center;
+}
+
+.loading-animation h2 {
+    color: white;
+}
