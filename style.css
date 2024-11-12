@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppons', sans-serif;
@@ -6,13 +6,36 @@
 }
 
 body {
-    background-color: black;
+    background-color: pink;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .gif-cutie img {
-    justify-content: center;
+    max-width: 100%;
+    height: auto;
 }
 
 .loading-animation h2 {
-    color: white;
+    margin-top: 20px;
+    color: rgb(112, 53, 104);
+    animation: fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

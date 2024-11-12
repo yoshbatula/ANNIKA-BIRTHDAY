@@ -13,7 +13,18 @@
         </div>
         <div class="loading-animation">
             <h2>LOADING...</h2>
+        </div>
     </div>
-    </div>
+
+    <script>
+        setTimeout(function() {
+            document.body.style.transition = "opacity 1s ease-out";
+            document.body.style.opacity = 0;
+
+            setTimeout(function() {
+                window.location.href = "CAKE.html";
+            }, 1000);
+        }, 3000);
+    </script>
 </body>
 </html>
