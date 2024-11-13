@@ -3,138 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIRTHDAY CAKE</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #fce7f3;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        .cake {
-            width: 200px;
-            height: 200px;
-            position: relative;
-            margin: 0 auto 50px;
-        }
-
-        .cake-base {
-            width: 100%;
-            height: 70px;
-            background-color: #f472b6;
-            border-radius: 0 0 20px 20px;
-            position: absolute;
-            bottom: 0;
-        }
-
-        .cake-middle {
-            width: 90%;
-            height: 60px;
-            background-color: #fb7185;
-            border-radius: 0 0 20px 20px;
-            position: absolute;
-            bottom: 70px;
-            left: 5%;
-        }
-
-        .cake-top {
-            width: 80%;
-            height: 50px;
-            background-color: #fda4af;
-            border-radius: 20px 20px 0 0;
-            position: absolute;
-            bottom: 130px;
-            left: 10%;
-        }
-
-        .candle {
-            width: 10px;
-            height: 50px;
-            background-color: #fde68a;
-            position: absolute;
-            bottom: 180px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 5px;
-        }
-
-        .flame {
-            width: 20px;
-            height: 20px;
-            background-color: #f59e0b;
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: flicker 0.5s infinite alternate;
-        }
-
-        .confetti {
-            width: 10px;
-            height: 10px;
-            position: absolute;
-            animation: fall linear infinite;
-        }
-
-        .greetings {
-            font-size: 24px;
-            font-weight: bold;
-            color: #7e3975;
-            animation: bounce 1s infinite alternate;
-        }
-
-        @keyframes flicker {
-            0% { transform: translateX(-50%) scale(1); opacity: 1; }
-            100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-100vh) rotate(0deg); }
-            100% { transform: translateY(100vh) rotate(360deg); }
-        }
-
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
-        }
-    </style>
+    <title>Happy Birthday Annika!</title>
+    <link rel="stylesheet" href="CAKE.CSS">
+    <link rel="icon" href=".idea/img/cake.png">
+    <script src="cake.js"></script>
+    <script src="toppings.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="cake">
-            <div class="cake-base"></div>
-            <div class="cake-middle"></div>
-            <div class="cake-top"></div>
-            <div class="candle">
-                <div class="flame"></div>
-            </div>
+    <h1>Happy Birthday Annika!</h1>
+
+    <div class="instructions-container" style="display:block;">
+        <p>Pick a choice between <button id="mic">Mic</button> or <button id="cursor">Cursor</button> to blow candle.</p>
+    </div>
+    <div id="instructions">
+        <p id="cursorInstructions">Swipe your cursor close to the flame to put it out.</p>
+        <p id="micInstructions">Blow on the flame to put it out.</p>
+    </div>
+    
+    <div class="birthday-cake-container">
+        <div class="birthday-cake-top">
+            <div id="candle"></div>
+            <div id="flame"></div>
         </div>
-        <div class="greetings">HAPPY BIRTHDAY ANNIKA</div>
+        <div id="icing"></div>
+        <div id="birthday-cake"></div>
     </div>
 
-    <script>
-        function createConfetti() {
-            const colors = ['#ffd700', '#ff6b6b', '#4ecdc4', '#45b7d1', '#f7797d'];
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                document.body.appendChild(confetti);
-            }
-        }
-        createConfetti();
-    </script>
+    <div class="gift-container">
+        <h3>Blow the candle to earn your prize!</h3>
+        <div id="gift">
+            <img src="#[import image here]" id="img" alt="" width="100" height="100">
+        </div>
+    </div>
 </body>
 </html>
